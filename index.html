@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Array Cardio 💪💪</title>
+  <title>Array Cardio</title>
 </head>
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
@@ -28,14 +28,33 @@
     // Array.prototype.some() // is at least one person 19 or older?
     // Array.prototype.every() // is everyone 19 or older?
 
+
+      const adult = people.some(person=> ((new Date).getFullYear()) - person.year > 19)
+      console.log(adult)
+
+      const adult2 = people.every(person=> ((new Date).getFullYear()) - person.year > 19)
+      console.log(adult2)
+
+
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
+    const ID823423 = comments.find(el=> el.id === 823423 )
+    console.log(ID823423)
+
     // Array.prototype.findIndex()
+    const ID = comments.findIndex(el=> el.id === 823423 )
+    console.log(ID)
+
     // Find the comment with this ID
     // delete the comment with the ID of 823423
 
+    const newComments = [
+      ...comments.slice(0, ID),
+      ...comments.slice(ID + 1)
+    ];
+console.log(newComments)
   </script>
 </body>
 </html>
